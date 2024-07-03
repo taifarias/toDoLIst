@@ -1,0 +1,129 @@
+
+@font-face {
+    font-family: 'Rajd';
+    src: url(assets/font/Rajdhani/Rajdhani-Regular.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajd';
+}
+body {
+   background-image: url("assets/img/greenish.jpg");  
+    background-size: cover;
+   
+}
+button {
+    background-color: aliceblue;
+    color: rgb(5, 107, 5);
+    border: 2px solid darkgreen;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: black;
+    color: beige;
+}
+
+
+
+.container{
+    background-image: url("assets/img/greenish1.jpg");   
+    max-width: 500px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 3rem auto 0; 
+    
+}
+
+header{
+    text-align: center;
+    padding: 0 1rem 1rem;
+    color: aliceblue;    
+}
+
+#toDo-form{
+    display: flex;
+    justify-content: center;    
+}
+#toDo-form input{
+    width: 350px;    
+}
+input{
+    border-radius: 5px;
+}
+
+.toolBar{
+    padding-bottom: 25px;
+}
+
+.search form{
+   display: flex;
+   padding-right: 30px;
+}
+.search input{
+    width: 300px;
+}
+
+.editToDo {
+    padding: 1.5rem ;
+    border-bottom: 1px solid #ccc;
+    margin-left: 35px;
+  
+  }
+
+.editToDo form{
+    display: flex;    
+    
+}
+
+
+#listToDo p,
+.editToDo p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;  
+
+}
+
+.toolBar {
+    display: flex;
+    padding-top: 20px;
+}
+
+
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: azure;
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-top: 10px;
+   
+} 
+
+.buttons{
+    display: flex;
+}
+.done-toDo{
+    margin-left: 10px;
+}
+
+.done p{
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+
+.hide{
+    display: none;
+}
