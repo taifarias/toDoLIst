@@ -12,6 +12,7 @@ const saveToDo = (text) => {
     toDo.classList.add("task");
 
     const taskTitle = document.createElement("p");
+    taskTitle.classList.add('taskTitle')
     taskTitle.innerText = text;
     toDo.appendChild(taskTitle);
 
@@ -41,6 +42,10 @@ const saveToDo = (text) => {
 
 
     toDoList.appendChild(toDo);
+
+    toDoInput.value = '';
+
+    
 }
 
 function deleteTask(button) {
@@ -54,12 +59,14 @@ function hideWidown(){
 
 function editTask(button){
     
-    hideWidown();    
-    inputEdit.innerText = oldTask;
-   
+    hideWidown();   
+     
+    const taskTitle = button.closest('.task').querySelector('.taskTitle');     
+    const oldTask = taskTitle.innerText; // Obtém o texto atual da tarefa 
+    inputEdit.value = oldTask;
+ 
+    button.closest('.task').remove();   
 }
-
-
 
 function taskDone(button) {
     const task = button.closest('.task'); // encontra o elemento pai mais próximo com a classe 'task'
@@ -73,8 +80,12 @@ toDoForm.addEventListener('submit', (e) => {
 
     if (inputValue) {
         saveToDo(inputValue); //criar essa função, q vai criar nova task
+    
     }
-})
+   
+
+}
+)
 
 
 editForm.addEventListener('submit', (e) => {
@@ -83,11 +94,16 @@ editForm.addEventListener('submit', (e) => {
     const newTask = inputEdit.value;
  
 
-    if (newTask) {
-       
+    if (newTask) {       
         saveToDo(newTask);
-        remove(oldTask);
+        hideWidown();
+        
     }
 
 }
 )
+
+
+
+// clica no botao edit, seleciona a task mais proxima do botao
+//guarda em uma const, após a criação de uma task nova, remove a const
