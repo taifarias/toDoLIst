@@ -1,7 +1,9 @@
 const toDoForm = document.getElementById('toDo-form');
 const toDoInput = document.getElementById('toDo-input');
-
-const toDoList = document.getElementById('listToDo')
+const doneButton = document.getElementsByClassName('done-toDo');
+const toDoList = document.getElementById('listToDo');
+const inputEdit = document.getElementById('editInput');
+const editForm = document.getElementById('editForm');
 
 
 
@@ -33,9 +35,36 @@ const saveToDo = (text) => {
     buttons.appendChild(btnDone);
 
 
+    btnDelete.addEventListener('click', () => deleteTask(btnDelete));
+    btnEdit.addEventListener('click', () => editTask(btnEdit));
+    btnDone.addEventListener('click', () => taskDone(btnDone));  // adc event listener ao button
+
+
     toDoList.appendChild(toDo);
 }
 
+function deleteTask(button) {
+    const task = button.closest('.task');
+    task.remove();
+}
+
+function hideWidown(){
+    editForm.classList.toggle('hide');
+}
+
+function editTask(button){
+    
+    hideWidown();    
+    inputEdit.innerText = oldTask;
+   
+}
+
+
+
+function taskDone(button) {
+    const task = button.closest('.task'); // encontra o elemento pai mais próximo com a classe 'task'
+    task.classList.toggle('done');
+}
 
 toDoForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -47,3 +76,18 @@ toDoForm.addEventListener('submit', (e) => {
     }
 })
 
+
+editForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const newTask = inputEdit.value;
+ 
+
+    if (newTask) {
+       
+        saveToDo(newTask);
+        remove(oldTask);
+    }
+
+}
+)
