@@ -9,11 +9,11 @@
   <body>
     <div class="container">
       <header>
-        <h1>Missions</h1>
+        <h1>Tarefas</h1>
       </header>
 
       <form id="toDo-form">
-        <input id="toDo-input" type="text" placeholder="Add a mission" />
+        <input id="toDo-input" type="text" placeholder="Adicione uma tarefa" />
         <button type="submit">+</button>
       </form>
 
@@ -40,39 +40,14 @@
         <form>
           <input type="text" id="editInput" />
           <div class="editButtons">
-            <button id="cancel-edit-btn" onclick="hideWidown()" >Cancelar</button>
-            <button type="submit">Confirmar</button>    
+            <button id="cancel-edit-btn" type="button" onclick="cancelEdit()">Cancelar</button>
+            <button type="submit">Confirmar</button>       
           </div>
         </form>
       </div>
 
       <div id="listToDo">
-        <div class="task">
-          <p>Excluir um item</p>
-          <div class="buttons">
-            <button class="delete-toDo" onclick="deleteTask(this)">✖</button>
-            <button class="edit-toDo" onclick="editTask(this)">✎</button>
-            <button class="done-toDo" onclick="taskDone(this)">✓</button>
-          </div>
-        </div>
-
-        <div class="task">
-          <p class="taskTitle">Editar um item</p>
-          <div class="buttons">
-            <button class="delete-toDo" onclick="deleteTask(this)">✖</button>
-            <button class="edit-toDo" onclick="editTask(this)">✎</button>
-            <button class="done-toDo" onclick="taskDone(this)">✓</button>
-          </div>
-        </div>
-
-        <div class="task">
-          <p>Criar um novo item</p>
-          <div class="buttons">
-            <button class="delete-toDo" onclick="deleteTask(this)">✖</button>
-            <button class="edit-toDo" onclick="editTask(this)">✎</button>
-            <button class="done-toDo" onclick="taskDone(this)">✓</button>
-          </div>
-        </div>
+       
       </div>
     </div>
 
